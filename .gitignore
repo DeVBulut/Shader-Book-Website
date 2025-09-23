@@ -1,0 +1,21 @@
+# OS and editor cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Node (if ever used locally)
+node_modules/
+
+# Build outputs (not used, but safe to ignore)
+dist/
+build/
+.out/
+.tmp/
+.temp/
+.cache/
+
+# Misc
+*.swp
+*.swo
+.idea/
+.vscode/
