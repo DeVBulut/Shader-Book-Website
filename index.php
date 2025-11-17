@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shader Book — Home</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <?php include __DIR__ . '/header.php'; ?>
+    <main class="container">
+      <section id="js-demo-waves" aria-labelledby="wavesTitle">
+        <h2 id="wavesTitle">Sine Wave Demo (JS)</h2>
+        <style>
+          #js-demo-waves { margin-block: 1.25rem 2rem; }
+          #js-demo-waves canvas { display:block; width:100%; max-width:800px; height:auto; border:1px solid #ccc; background:#f8f9fb; border-radius:4px; }
+          #js-demo-waves .controls { display:flex; flex-wrap:wrap; gap:.75rem 1rem; align-items:center; margin-top:.75rem; }
+          #js-demo-waves .control { display:flex; align-items:center; gap:.5rem; }
+          #js-demo-waves .control label { font-weight:600; }
+          #js-demo-waves .control input[type=range] { width:200px; }
+          #js-demo-waves .buttons { display:flex; gap:.75rem; margin-top:.75rem; }
+          #js-demo-waves .note { font-size:.9rem; color:#555; margin-top:.5rem; }
+          #js-demo-waves .modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.45); padding:1rem; z-index:1000; }
+          #js-demo-waves .modal.open { display:flex; }
+          #js-demo-waves .modal .dialog { background:#fff; color:#111; width:min(92vw, 560px); border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,.25); padding:1rem 1.25rem; }
+          #js-demo-waves .modal h3 { margin-top:0; }
+          #js-demo-waves .modal .modal-actions { display:flex; justify-content:flex-end; margin-top:.75rem; }
+        </style>
+        <canvas id="wavesCanvas" width="800" height="300"></canvas>
+        <div class="controls" role="group" aria-label="Wave controls">
+          <div class="control">
+            <label for="wavesAmplitude">amplitude</label>
+            <input id="wavesAmplitude" type="range" min="0" max="100" step="1" value="40" aria-describedby="wavesAmplitudeOut" />
+            <span id="wavesAmplitudeOut" aria-live="polite">40</span>
+          </div>
+          <div class="control">
+            <label for="wavesFrequency">frequency</label>
+            <input id="wavesFrequency" type="range" min="0.5" max="5" step="0.1" value="2" aria-describedby="wavesFrequencyOut" />
+            <span id="wavesFrequencyOut" aria-live="polite">2.0</span>
+          </div>
+          <div class="control">
+            <label for="wavesSpeed">speed</label>
+            <input id="wavesSpeed" type="range" min="0.1" max="6" step="0.1" value="2" aria-describedby="wavesSpeedOut" />
+            <span id="wavesSpeedOut" aria-live="polite">2.0</span>
+          </div>
+        </div>
+        <div class="buttons">
+          <button type="button" id="wavesResetBtn">Reset Controls</button>
+        </div>
+        <p class="note">Space = pause/resume, R = reset</p>
+
+        <div id="wavesModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="wavesModalTitle" tabindex="-1">
+          <div class="dialog" role="document">
+            <h3 id="wavesModalTitle">About this demo</h3>
+            <p>This JavaScript renders a live, animated sine wave to a canvas element using requestAnimationFrame. The sliders directly control amplitude, frequency, and phase speed, updating the drawing in real time.</p>
+            <p>Use the Space bar to pause or resume and the R key or Reset button to restore defaults. The modal uses basic focus trapping for accessibility.</p>
+            <div class="modal-actions">
+              <button type="button" id="wavesCloseBtn">Close</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Welcome</h2>
+        <p>This is the home of the Shader Book. Use the navigation above to browse chapters, reference the glossary, and learn about the project.</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Shader Book</p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="/js/waves.js" defer></script>
+  </body>
+  </html>
+

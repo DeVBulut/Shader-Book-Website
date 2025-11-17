@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shader Book — Video</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .video-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        background: #0f1524;
+        border: 1px solid var(--border);
+        border-radius: .75rem;
+        overflow: hidden;
+      }
+      
+      .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      
+      .video-fallback {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: var(--muted);
+        padding: 2rem;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <?php include __DIR__ . '/header.php'; ?>
+    <main class="container">
+      <section>
+        <h2>Shader Demo</h2>
+        <div class="video-container">
+          <video controls preload="metadata" aria-label="Shader demonstration video">
+            <source src="media/my-video.mp4" type="video/mp4">
+            <track kind="captions" src="media/captions.vtt" srclang="en" label="English" default>
+            <div class="video-fallback">
+              <p>Video not found. Please add <code>my-video.mp4</code> to the <code>media/</code> folder.</p>
+            </div>
+          </video>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Shader Book</p>
+      </div>
+    </footer>
+     <script>
+       document.getElementById('year').textContent = new Date().getFullYear();
+     </script>
+  </body>
+</html>
+

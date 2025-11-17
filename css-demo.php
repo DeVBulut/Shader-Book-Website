@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shader Book — CSS Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/styles/shaderbook-assignment.css">
+    <style>
+      /* Demo-specific styles */
+      .demo-section {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border-left: 4px solid var(--suu-red);
+      }
+      
+      .demo-title {
+        color: var(--suu-red);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      
+      .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+      
+      .badge {
+        position: sticky;
+        top: 0;
+        background: linear-gradient(135deg, var(--suu-red) 0%, #ff4444 100%);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0 0 8px 8px;
+        text-align: center;
+        font-weight: 600;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(219, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="badge">CSS Demo - 30+ Features Showcase</div>
+    
+    <?php include __DIR__ . '/header.php'; ?>
+    
+    <main class="container">
+      <section class="demo-section">
+        <h2 class="demo-title">Typography Showcase</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <h3 class="font-bold tracking-wide">Bold & Wide Spacing</h3>
+            <p class="font-light">Light weight text with normal spacing</p>
+            <p class="font-semibold tracking-tight">Semibold with tight spacing</p>
+            <p class="gradient-text">Gradient text effect</p>
+          </div>
+          <div>
+            <h3 class="suu-red">SUU Red Color</h3>
+            <p class="suu-black">SUU Black Color</p>
+            <p class="suu-grey">SUU Grey Color</p>
+            <p class="decorative">Decorative pseudo-elements</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2 class="demo-title">Layout & Grid</h2>
+        <div class="grid grid-cols-4 gap-4">
+          <div class="card text-center">
+            <h4>Grid Item 1</h4>
+            <p>Flexbox layout</p>
+          </div>
+          <div class="card text-center">
+            <h4>Grid Item 2</h4>
+            <p>CSS Grid</p>
+          </div>
+          <div class="card text-center">
+            <h4>Grid Item 3</h4>
+            <p>Responsive</p>
+          </div>
+          <div class="card text-center">
+            <h4>Grid Item 4</h4>
+            <p>Sticky header</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2 class="demo-title">Interactive Buttons</h2>
+        <div class="flex flex-wrap gap-4">
+          <button class="btn btn-primary hover-lift">Primary Button</button>
+          <button class="btn btn-secondary hover-scale">Secondary Button</button>
+          <button class="btn btn-primary hover-glow">Glow Effect</button>
+          <button class="btn btn-primary active-press">Active Press</button>
+          <button class="btn btn-primary" disabled>Disabled Button</button>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2 class="demo-title">Form Controls</h2>
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label for="demo-input">Focus Ring Input:</label>
+            <input type="text" id="demo-input" class="form-input focus-ring w-full" placeholder="Type here...">
+          </div>
+          <div>
+            <label for="demo-textarea">Textarea:</label>
+            <textarea id="demo-textarea" class="form-input w-full" rows="3" placeholder="Multi-line input..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2 class="demo-title">Transform & Transition Effects</h2>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="card hover-lift cursor-pointer">
+            <h4>Hover Lift</h4>
+            <p>Hover to see lift effect</p>
+          </div>
+          <div class="card hover-scale cursor-pointer">
+            <h4>Hover Scale</h4>
+            <p>Hover to see scale effect</p>
+          </div>
+          <div class="card hover-glow cursor-pointer">
+            <h4>Hover Glow</h4>
+            <p>Hover to see glow effect</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2 class="demo-title">Aspect Ratio & Visuals</h2>
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <h4>16:9 Aspect Ratio</h4>
+            <div class="aspect-video bg-suu-red rounded flex items-center justify-center">
+              <span class="text-white font-bold">16:9 Video</span>
+            </div>
+          </div>
+          <div>
+            <h4>Square Aspect Ratio</h4>
+            <div class="aspect-square bg-suu-grey rounded flex items-center justify-center">
+              <span class="text-black font-bold">1:1 Square</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2 class="demo-title">Gradients & Shadows</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="gradient-bg text-white p-6 rounded text-center">
+            <h4>Gradient Background</h4>
+            <p>Linear gradient with SUU red</p>
+          </div>
+          <div class="bg-white p-6 rounded shadow-lg text-center">
+            <h4>Heavy Shadow</h4>
+            <p>Box shadow effect</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2 class="demo-title">Spacing & Layout</h2>
+        <div class="flex justify-between items-center p-4 border rounded">
+          <div class="flex gap-4">
+            <div class="p-2 bg-suu-red text-white rounded">Padding 2</div>
+            <div class="p-4 bg-suu-grey text-black rounded">Padding 4</div>
+            <div class="p-6 bg-suu-red text-white rounded">Padding 6</div>
+          </div>
+          <div class="text-right">
+            <p class="m-0">No margin</p>
+            <p class="m-2">Margin 2</p>
+            <p class="m-4">Margin 4</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2 class="demo-title">CSS Grid Named Areas</h2>
+        <div class="layout-grid" style="min-height: 200px; border: 2px solid var(--suu-grey);">
+          <div class="header bg-suu-red text-white p-2 text-center">Header Area</div>
+          <div class="sidebar bg-suu-grey text-black p-2">Sidebar</div>
+          <div class="main bg-white p-2">Main Content Area</div>
+          <div class="footer bg-suu-red text-white p-2 text-center">Footer Area</div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2 class="demo-title">Responsive Design</h2>
+        <div class="grid grid-cols-4 gap-4">
+          <div class="card text-center">
+            <h4>Desktop</h4>
+            <p>4 columns</p>
+          </div>
+          <div class="card text-center">
+            <h4>Tablet</h4>
+            <p>2 columns</p>
+          </div>
+          <div class="card text-center">
+            <h4>Mobile</h4>
+            <p>1 column</p>
+          </div>
+          <div class="card text-center">
+            <h4>Responsive</h4>
+            <p>Adapts to screen</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Shader Book</p>
+      </div>
+    </footer>
+
+    <div class="theme-toggle">
+      <button class="btn btn-secondary" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      function toggleTheme() {
+        document.documentElement.classList.toggle('dark');
+        document.documentElement.classList.toggle('light');
+      }
+      
+      // Initialize theme
+      document.documentElement.classList.add('light');
+    </script>
+  </body>
+</html>
+
