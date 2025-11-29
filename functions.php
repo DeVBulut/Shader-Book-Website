@@ -7,20 +7,22 @@
     <link rel="stylesheet" href="styles.css">
     <style>
       main section { margin-bottom: 1.75rem; }
-      .demo-meta { color: #98a6bc; font-size: .95rem; margin-bottom: .75rem; }
+      .demo-meta { color: var(--muted); font-size: .95rem; margin-bottom: .75rem; }
       .canvas-frame {
-        background: #0b101c;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)), var(--panel);
         border: 1px solid var(--border);
-        border-radius: .75rem;
-        padding: 1rem;
+        border-radius: 1rem;
+        padding: 1.1rem;
+        box-shadow: var(--shadow);
       }
       canvas.demo-canvas {
         width: 100%;
         display: block;
         max-width: 820px;
-        border-radius: .5rem;
-        border: 1px solid rgba(255,255,255,.05);
-        background: radial-gradient(circle at 20% 20%, rgba(76,201,240,.1), rgba(9,13,22,.85));
+        border-radius: .75rem;
+        border: 1px solid rgba(255,255,255,.08);
+        background: radial-gradient(circle at 20% 20%, rgba(93,214,255,.12), rgba(9,13,22,.85));
+        box-shadow: 0 10px 40px rgba(0,0,0,0.35);
       }
       .controls {
         margin-top: 1rem;
@@ -58,8 +60,8 @@
       details {
         margin-top: .75rem;
         background: rgba(255,255,255,.04);
-        border-radius: .5rem;
-        padding: .65rem .85rem;
+        border-radius: .65rem;
+        padding: .7rem .9rem;
         border: 1px solid rgba(255,255,255,.08);
       }
       details summary {
@@ -75,6 +77,7 @@
   <body>
     <?php include __DIR__ . '/header.php'; ?>
     <main class="container">
+      <h1 class="page-title">Function Playground</h1>
       <section id="plotter" aria-labelledby="plotterTitle">
         <h2 id="plotterTitle">Function Plotter</h2>
         <p class="demo-meta">Live plot of classic shader helper functions with amplitude, frequency, and phase controls.</p>
@@ -111,7 +114,11 @@
       </section>
     </main>
     <footer class="site-footer">
-      <div class="container">
+      <div class="container site-footer__inner">
+        <a class="site-brand site-brand--mini" href="index.php">
+          <img class="site-logo" src="media/logo.svg" width="32" height="32" alt=""/>
+          <span class="site-brand__text">Shader Book</span>
+        </a>
         <p>&copy; <span id="year"></span> Shader Book</p>
       </div>
     </footer>
